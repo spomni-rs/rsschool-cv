@@ -9,3 +9,23 @@ Mikhail Snitko
   - **e-mail (general):** mikhail.snitko@gmail.com
   - **e-mail (related with RSSchool):** spomni.for.rs@gmail.com
   - **Telegram:** @spomni_rs
+
+## 4. Skills
+
+### 4.1 Active Skills
+  - HTML 5
+  - CSS 3
+  - SASS
+  - JavaScript (JS5, JS6)
+  - jsdoc
+  - ReactJS
+  - nodejs as a develop toolkit (npm, gulp, standart, jsdoc, mocha, etc.)
+  - OOP
+
+### 4.2 Passive Skills (weren't used for long time)
+  - jQuery
+  - Bootstrap
+  - php
+  - SQL
+  - CMS PrestaShop
+  - CMS Wordpress
