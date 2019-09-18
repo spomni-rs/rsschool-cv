@@ -1,28 +1,29 @@
-# Mikhail Snitko's CV
+# Резюме для RSSchool
 
-## 1. Full Name
-Mikhail Snitko
+## 1. Ф.И.О
+Снитко Михаил Юрьевич (Mikhail Snitko)
 
-## 2. Contact Info
-  - **phone (A1):** +375 29 346-14-95
-  - **phone (MTS):** +375 33 382-12-32
-  - **e-mail (general):** mikhail.snitko@gmail.com
-  - **e-mail (related with RSSchool):** spomni.for.rs@gmail.com
+## 2. Контактная информация
+  - **телефон (A1):** +375 29 346-14-95
+  - **телефон (MTS):** +375 33 382-12-32
+  - **e-mail (основной):** mikhail.snitko@gmail.com
+  - **e-mail (для RSSchool):** spomni.for.rs@gmail.com
   - **Telegram:** @spomni_rs
 
-## 4. Skills
+## 4. Навыки и технологии
 
-### 4.1 Active Skills
+### 4.1 Активные
   - HTML 5
   - CSS 3
   - SASS
   - JavaScript (JS5, JS6)
   - jsdoc
   - ReactJS
-  - nodejs as a develop toolkit (npm, gulp, standart, jsdoc, mocha, etc.)
-  - OOP
+  - Node.js как инструмент разработчика (npm, gulp, standart, jsdoc, mocha и т.д.)
+  - ООП
+  - bash
 
-### 4.2 Passive Skills (weren't used for long time)
+### 4.2 Пассивные (не использовались долгое аремя)
   - jQuery
   - Bootstrap
   - php
