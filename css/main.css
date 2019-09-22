@@ -1,0 +1,17 @@
+body {
+  padding: 0;
+  margin: 0;
+
+  background-color: lightgray;
+}
+
+.main-container {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.main-container > * {
+  margin: 0 10px;
+  background-color: white;
+  box-shadow: -10px 10px 5px 0px gray;
+}
