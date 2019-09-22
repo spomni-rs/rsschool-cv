@@ -1,5 +1,5 @@
 html {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", serif;
   font-size: 18px;
 }
 
@@ -23,11 +23,20 @@ body {
   box-shadow: -10px 10px 5px 0px gray;
 }
 
+h1, h2, h3 {
+  font-family: "Helvetica", "Arial", sans-serif;
+}
+
 h1 {
   margin: 1rem;
 
   text-align: center;
   font-size: 1.8rem;
+}
+
+h2 {
+  margin: 1rem 0 0.5rem;
+  font-size: 1.4rem;
 }
 
 .foto {
@@ -37,4 +46,37 @@ h1 {
   margin: 0 1rem 0 0;
 
   border: 1px solid black;
+}
+
+p {
+  text-align: justify;
+}
+
+.name-content {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 1.1rem;
+}
+
+.name-content,
+.contacts-content {
+  padding-left: calc(288px + 7px*2 + 1rem + 1.75rem);
+}
+
+ul.contacts-content {
+  list-style-type: none;
+}
+
+.contacts-content .field {
+  font-family: "Arial", "Helvetica", sans-serif;
+  font-size: 0.9rem;
+}
+
+.contacts-content .field-name {
+  line-height: 1.4;
+  font-weight: bold;
+}
+
+.contacts-content .field-value * {
+  font-weight: bold;
+  color: darkslateblue;
 }
