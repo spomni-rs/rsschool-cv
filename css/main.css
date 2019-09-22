@@ -42,6 +42,11 @@ h2 {
 
 h3 {
   margin: 1rem 0 0.25rem 1.75rem;
+  font-size: 1.1rem;
+}
+
+a {
+  color: #000088;
 }
 
 .foto {
@@ -59,6 +64,13 @@ p {
   text-align: justify;
 }
 
+p a {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.86rem;
+  font-weight: bold;
+  font-style: italic;
+}
+
 .name-content {
   font-family: "Georgia", "Times New Roman", serif;
   font-size: 1.1rem;
@@ -73,19 +85,18 @@ ul.contacts-content {
   list-style-type: none;
 }
 
-.contacts-content .field {
+.field {
   font-family: "Arial", "Helvetica", sans-serif;
   font-size: 0.9rem;
 }
 
-.contacts-content .field-name {
+.field-name {
   line-height: 1.4;
   font-weight: bold;
 }
 
 .contacts-content .field-value * {
   font-weight: bold;
-  color: darkslateblue;
 }
 
 ul.skills-list {
@@ -95,4 +106,40 @@ ul.skills-list {
   font-size: 0.9rem;
 
   list-style-type: circle;
+}
+
+details {
+  padding-left: 1.5rem;
+}
+
+summary {
+  margin-left: 0.25rem;
+
+  font-family: "Arial", "Helvetica", sans-serif;
+  color: #000066;
+  text-decoration: underline;
+
+  cursor: pointer;
+}
+
+details pre {
+  margin: 0.5rem 0 1rem;
+  font-size: 16px;
+  overflow-x: scroll;
+  border: 1px solid gray;
+  background-color: #f3f3f3;
+}
+
+.education-content {
+  margin: 0.25rem 0;
+  padding-left: 1.75rem;
+  list-style-type: none;
+}
+
+.education-content .field-value {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.english-content.field {
+  margin-left: 1.75rem;
 }
