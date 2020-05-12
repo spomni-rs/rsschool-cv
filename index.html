@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Резюме для RS School - Михаил Снитко</title>
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+
+  <div class="main-container">
+
+    <article>
+
+      <h1>Резюме для RS School</h1>
+
+      <img class="foto" src="./assets/img/foto_288_384.png" alt="Михаил Снитко" width="288" height="384">
+
+      <h2>1. Ф.И.О</h2>
+
+        <p class="name-content">Снитко Михаил Юрьевич</p>
+
+      <h2 class="contacts-header" >2. Контактная информация</h2>
+
+        <ul class="contacts-content" >
+          <li class="field" >
+            <span class="field-name">Телефон (A1): </span>
+            <span class="field-value"><a href="tel:+375293461495">+375 29 346-14-95</a></span>
+          </li>
+
+          <li class="field" >
+            <span class="field-name">Телефон (МТС): </span>
+            <span class="field-value"><a href="tel:+375293821232">+375 29 382-12-32</a></span>
+          </li>
+
+          <li class="field" >
+            <span class="field-name">e-mail (основной): </span>
+            <span class="field-value"><a href="mailto:mikhail.snitko@gmail.com">mikhail.snitko@gmail.com</a></span>
+          </li>
+
+          <li class="field" >
+            <span class="field-name">e-mail (для RSSchool): </span>
+            <span class="field-value"><a href="mailto:spomni.for.rs@gmail.com">spomni.for.rs@gmail.com</a></span>
+          </li>
+
+          <li class="field" >
+            <span class="field-name">Telegram: </span>
+            <span class="field-value"><a href="tg://resolve?domain=spomni_rs" >@spomni_rs</a></span>
+          </li>
+        </ul>
+
+      <h2>3. Резюме</h2>
+
+        <p>Уже более десяти лет программирование, в основном под web, является одним из моих хобби. Не сказать, чтобы я отдавал этому занятию серьезное предпочтение, т.к. хобби - это, в первую очередь, про удовольствие. Однако, знания и опыт, все же, накапливались до тех пор, пока превращение увлечения в основную профессию стало выглядеть вполне реальным.</p>
+
+        <p>На рубеже 2014-2015 годов, был проведен первый стресс-тест: совместно с товарищем было разработано и отдано в продакшн несколько коммерческих сайтов. Продукт получился рабочим, но эти исходники никому показывать не хочется - качество оставляет желать лучшего.</p>
+
+        <p>По результатам проделанной работы, были обозначены основные направления развития, однако личные обстоятельства заставили меня отложить смену профессии на несколько лет.</p>
+
+        <p>Некоторое время назад я вновь вернулся к вопросу перехода в IT: неторопливо, но системно востанавливаю и нарабатываю необходимые знания и навыки.</p>
+
+        <p>В данный момент основной целью является пройти полный курс обучения JavaScript Frontend в RS School. Прохождение данного курса позволит систематизировать и дополнить уже существующие знания и навыки до минимально допустимого уровня для устройства на работу.</p>
+
+      <h2>4. Навыки и технологии</h2>
+
+        <h3>4.1 Активные</h3>
+
+          <ul class="skills-list">
+            <li>HTML 5</li>
+            <li>CSS 3</li>
+            <li>SASS</li>
+            <li>JavaScript (JS5, JS6)</li>
+            <li>jsdoc</li>
+            <li>ReactJS</li>
+            <li>Node.js как инструмент разработчика (npm, gulp, standart, jsdoc, mocha и т.д.)</li>
+            <li>ООП</li>
+            <li>bash</li>
+          </ul>
+
+        <h3>4.2 Пассивные (не использовались долгое аремя)</h3>
+
+          <ul class="skills-list">
+            <li>jQuery</li>
+            <li>Bootstrap</li>
+            <li>php</li>
+            <li>SQL</li>
+            <li>CMS PrestaShop</li>
+            <li>CMS Wordpress</li>
+          </ul>
+
+      <h2>5. Примеры кода</h2>
+
+        <details>
+          <summary>JavaScript</summary>
+
+          <pre><code class="prettyprint lang-javascript" >
+            'use strict';
+
+            /** An instance can return random non-repeated integers from 0 to the user-defined value.
+            */
+            class Lottotron {
+
+              /** Construct a Lottotron instance.
+              *
+              * @param {number} maxNumber - The max number of the interval. Should be not less than 0. The float number will be rounded down to the nearest integer.
+              *
+              * @returns {Lottotron}
+              */
+              constructor(maxNumber){
+                //-- Check input params
+                  if (typeof(maxNumber) !== 'number') {
+                    throw new Error('The input option "maxNumber" should be a number.')
+                  }
+
+                  if (maxNumber &lt; 0) {
+                    throw new Error('The input option "maxNumber" should be greater than 0.')
+                  }
+                //--
+
+                /** The max number of the interval.
+                * @type number
+                * @private
+                */
+                this._maxNumber = Math.floor(maxNumber);
+
+                /** Numbers that were not returned yet.
+                * @type number[]
+                * @private
+                */
+                this._restNumbers = this._createNumbersArray(this._maxNumber);
+              }
+
+              /** The max number of the interval.
+              * @type number
+              */
+              get maxNumber(){
+                return this._maxNumber;
+              }
+
+              /** Numbers that were not returned yet using the method *#getNumber()*
+              * @type number[]
+              */
+              get restNumbers(){
+                return this._restNumbers.map(num =&gt; num);
+              }
+
+              /** Return the next number until all numbers of the inteval are returned. Return "null" if all numbers is returned.
+              *
+              * @returns {number|null}
+              */
+              getNumber(){
+
+                if (this._restNumbers.length === 0){
+                  return null;
+                }
+
+                let idx = this._randomInteger(0, this._restNumbers.length - 1);
+
+                return this._restNumbers.splice(idx, 1)[0];
+              }
+
+              /** Rallback this instance to the inital state.
+              *
+              * @returns {undefined}
+              */
+              reload(){
+                this._restNumbers = this._createNumbersArray(this._maxNumber);
+              }
+
+              /** Return a random integer from min to max.
+              *
+              * @param {number} min
+              * @param {number} max
+              *
+              * @returns {number}
+              * @private
+              */
+              _randomInteger(min, max){
+                let rand = min + Math.random() * (max + 1 - min)
+                return Math.floor(rand)
+              }
+
+              /** Return an integer array filled with numbers from 0 to "maxNumber".
+              * @param {number} maxNumber
+              *
+              * @returns {number[]}
+              * @private
+              */
+              _createNumbersArray(maxNumber){
+                let res = []
+                for (let i = 0; i &lt;= maxNumber; i++){
+                  res[i] = i
+                }
+                return res
+              }
+            }
+
+            module.exports = Lottotron
+          </code></pre>
+        </details>
+
+        <details>
+          <summary>bash & git</summary>
+
+          <pre><code class="prettyprint lang-bash" >
+            #!/bin/bash
+            echo""
+
+            echo "action: Find a git repository."
+
+              if ! [ -d ".git" ]; then
+                echo "error: Not found a git repository."
+                echo "    The current directory should be a root of the git repository."
+                echo "Aborting"
+                exit 1
+              fi
+
+            echo "    The git repository is found."
+            echo ""
+
+
+            echo "action: Checkout to the branch\"master\"."
+
+              if ! git checkout master; then
+                echo "error: Action failed."
+                echo "Aborting"
+                exit 1
+              fi
+
+            echo ""
+
+
+            echo "action: Check working tree."
+
+              testVar=`git status | grep -E '^nothing to commit, working tree clean$'`
+
+              if [ -z "$testVar" ]; then
+                echo "error: Working tree isn't clean."
+                echo "    You have some uncommited changes. Commit changes or reset your working tree."
+                echo "Aborting"
+                exit 1
+              fi
+
+            echo "    Working tree is clean."
+            echo ""
+
+
+            echo "action : Get release type."
+
+              if [ -z "$1" ] || [ "$1" = 'patch' ];then
+                releaseType='patch'
+
+              else if [ "$1" = 'major' ] || [ "$1" = 'minor' ]; then
+                releaseType=$1
+
+              else
+                echo "error: Incorrect release type."
+                echo "    releaseType = $1"
+                echo "    Release type should be an empty string or equal to the values 'major', 'minor', 'patch'."
+                echo "Aborting"
+                exit 1
+              fi fi
+
+            echo "    releaseType = $releaseType"
+            echo ""
+
+
+            echo "action: Get current version."
+
+              if [ -f dev/package.json ]; then
+
+                currentVersion=`cat dev/package.json | grep -E '^  "version": "[0-9]+\.[0-9]+\.[0-9]+",$' | grep -oE '[0-9]+\.[0-9]+\.[0-9]+'`
+
+                if [ -z $currentVersion ]; then
+                  echo "error: Not found version in the file 'dev/package.json'."
+                  echo "    The field 'version' should contain a string that should match to the RegExp '^[0-9]+\.[0-9]+\.[0-9]$'."
+                  echo "Aborting"
+                  exit 1
+                fi
+
+              else
+
+                currentVersion=`git tag --sort=authordate | grep -E '[0-9]+\.[0-9]+\.[0-9]+' | tail -n1`
+
+                if [ -z $currentVersion ]; then
+                  currentVersion="0.0.0"
+                fi
+
+              fi
+
+            echo "    curentVersion = $currentVersion"
+            echo ""
+
+
+            echo "action: Get new version."
+
+              major=`echo $currentVersion | grep -oE '^[0-9]+'`
+              minor=`echo $currentVersion | grep -oE '\.[0-9]+\.' | grep -oE '[0-9]+'`
+              patch=`echo $currentVersion | grep -oE '[0-9]+$'`
+
+              if [ "$releaseType" = "major" ]; then
+                major="$(( $major + 1 ))"
+              else if [ "$releaseType" = "minor" ]; then
+                minor="$(( $minor + 1 ))"
+              else if [ "$releaseType" = "patch" ]; then
+                patch="$(( $patch + 1 ))"
+              fi fi fi
+
+              newVersion="$major.$minor.$patch"
+
+            echo "    newVersion = $newVersion"
+            echo ""
+
+
+            echo "action: Get latest version."
+
+              versionList=`git tag --merged=master | grep -E '^[0-9]+\.[0-9]+\.[0-9]+$'`
+              majorList=`echo "$versionList" | grep -oE '^[0-9]+'`
+              latestMajor=0
+
+              for var in $majorList; do
+                if [ "$var" -gt "$latestMajor" ]; then
+                  latestMajor="$var"
+                fi
+              done
+
+              versionList=`echo "$versionList" | grep -E "^$latestMajor"`
+              minorList=`echo "$versionList" | grep -oE '\.[0-9]+\.' | grep -oE '[0-9]+'`
+              latestMinor="0"
+
+              for var in $minorList; do
+                if [ "$var" -gt "$latestMinor" ]; then
+                  latestMinor="$var"
+                fi
+              done
+
+              versionList=`echo "$versionList" | grep -E "^$latestMajor\.$latestMinor\.[0-9]+\$"`
+              patchList=`echo "$versionList" | grep -oE '[0-9]+$'`
+              latestPatch="0"
+
+              for var in $patchList; do
+                if [ "$var" -gt "$latestPatch" ]; then
+                  latestPatch="$var"
+                fi
+              done
+
+              hasError=0
+
+              if [ "$major" -gt "$latestMajor" ]; then
+                hasError=1
+
+              else if [ "$major" -eq "$latestMajor" ]; then
+
+                if [ "$minor" -gt "$latestMinor" ]; then
+                  hasError=1
+
+                else if [ "$minor" -eq "$latestMinor" ]; then
+                  if [ "$patch" -gt "$latestPatch" ]; then
+                    hasError=1
+                  fi
+                fi fi
+              fi fi
+
+              if [ "$hasError" -eq "0" ]; then
+                echo "error: Attempt to define the earlier or equal version."
+                echo "    The git repository has the tag with the later or equal version than new one."
+                echo "    latestVersion = $latestMajor.$latestMinor.$latestPatch"
+                echo "Aborting"
+                exit 1
+              fi
+
+            echo "    latestVersion = $latestMajor.$latestMinor.$latestPatch"
+            echo ""
+
+
+            echo "action: Generate changelog."
+
+              if ! node scripts/generate-changelog.js "$newVersion"; then
+                echo "error: Action failed."
+                echo "Aborting"
+                exit 1
+              fi
+
+              editor=`git config --get --global core.editor`
+              $editor dev/CHANGELOG.md
+
+            echo "    Ok."
+            echo ""
+
+
+            echo "action: Apply version"
+
+              echo "    Edit dev/package.json."
+              if [ -f "dev/package.json" ]; then
+                cat dev/package.json | sed "s/  \"version\": \".*\"/  \"version\": \"$newVersion\"/" -i dev/package.json
+              fi
+
+              echo "    Commit version."
+              git add --all
+              if ! git commit -m "v$newVersion"; then
+                echo "error: Action failed."
+                rm dev/CHANGELOG.md
+                git reset --hard
+                echo "Aborting"
+                exit 1
+              fi
+
+              echo "    Tag version."
+              if ! git tag "v$newVersion"; then
+                echo "error: Not taged version."
+                echo "Aborting"
+                git reset --hard HEAD^
+                exit 1
+              fi
+
+            echo ""
+
+
+            echo "action: Write release to the branch \"public/master\""
+
+              git checkout public/master
+
+              masterTreeHash=`git cat-file -p master | grep -E '^tree [^ ]{40}' | grep -oE '[^ ]{40}'`
+              devTreeHash=`git cat-file -p $masterTreeHash | grep -E 'tree [^ ]{40}.+dev$' | grep -oE '[^ ]{40}'`
+
+              rm -rf *
+              git read-tree --reset -u $devTreeHash
+              git add --all
+
+              if ! git commit -m "v$newVersion"; then
+                echo "error: Not commited version on the branch \"public/master\"."
+                echo "Aborting"
+                git reset --hard
+
+                git checkout master
+                git reset --hard HEAD^
+                git tag -d "v$newVersion"
+
+                exit 1
+              fi
+
+              if ! git tag "$newVersion"; then
+                echo "error: Not taged version on the branch \"public/master\"."
+                echo "Aborting"
+                git reset --hard HEAD^
+
+                git checkout master
+                git reset --hard HEAD^
+                git tag -d $newVersion
+
+                exit 1
+              fi
+
+            echo ""
+
+
+            echo "action: Write release to the branch \"public/gh-pages\""
+
+              git checkout public/gh-pages
+
+              publicMasterTreeHash=`git cat-file -p public/master | grep -E '^tree [^ ]{40}$' | grep -oE '[^ ]{40}'`
+              docTreeHash=`git cat-file -p $publicMasterTreeHash | grep -E 'tree [^ ]{40}.+doc$'| grep -oE '[^ ]{40}'`
+
+              rm rf *
+              git read-tree --reset -u $docTreeHash
+              git add --all
+
+              if ! git commit -m "doc_v$newVersion"; then
+                echo "error: Not commited version on the branch \"public/gh-pages\"."
+                echo "Aborting"
+                git reset --hard
+
+                git checkout public/master
+                git reset --hard HEAD^
+                git tag -d $newVersion
+
+                git checkout master
+                git reset --hard HEAD^
+                git tag -d "v$newVersion"
+
+                exit 1
+              fi
+
+              if ! git tag "doc_v$newVersion"; then
+                echo "error: Not taged version on the branch \"public/gh-pages\"."
+                echo "Aborting"
+                git reset --hard HEAD^
+
+                git checkout public/master
+                git reset --hard HEAD^
+                git tag -d $newVersion
+
+                git checkout master
+                git reset --hard HEAD^
+                git tag -d "v$newVersion"
+
+                exit 1
+              fi
+
+            echo ""
+
+              git checkout master
+
+            echo ""
+            echo "Release is completed."
+          </code></pre>
+        </details>
+
+      <h2>6. Опыт</h2>
+
+        <p>Помощь в разработке двух интернет магазинов и двух сайтов-каталогов. В мою зону ответственности входила привязка созданной с нуля верстки к CMS, а так же разработка JS-скриптов для и интерактивных элементов интерфейса пользователя.</p>
+
+        <p>Разработка небольших скриптов <a href="https://github.com/spomni" title="Spomni's GitHub page." target="_blank">для личного пользования</a>: парсер сайта, скрипты для автоматизации работы с git, минималистичное приложение для тренировки английского и т.д.</p>
+
+
+      <h2>7. Образование</h2>
+
+        <ul class="education-content">
+          <li class="field">
+            <span class="field-name" >УО: </span>
+            <span class="field-value">МГПЛ №1 машиностроения</span>
+          </li>
+          <li class="field">
+            <span class="field-name" >Квалификация: </span>
+            <span class="field-value">Электромонтер по ремонту и обслуживанию электрооборудования.</span>
+          </li>
+        </ul>
+
+      <h2>Английский язык</h2>
+
+        <p class="field english-content">
+          <span class="field-name">Уровень: </span>
+          <span class="field-value">A1 - Elementary</span>
+        </p>
+
+        <p>Занимаюсь английским индивидуально с преподавателем около двух лет один раз в неделю. До этого английский язык не изучал никогда.</p>
+
+    </article>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+</body>
+</html>
